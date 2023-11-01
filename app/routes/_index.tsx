@@ -9,33 +9,41 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div className="p-10">
+      <h1 className="text-5xl">Work Journal</h1>
+      <p className="mt-2 text-lg text-gray-400">
+        Learnings and doings and things.
+      </p>
+
+      <div className="mt-4">
+        <p>
+          Week of Nov 1<sup>st</sup>
+        </p>
+      </div>
+
+      <div className="mt-3 space-y-4">
+        <div>
+          <p>Work</p>
+          <ul className="ml-8 list-disc">
+            <li>item one</li>
+            <li>item two</li>
+          </ul>
+        </div>
+        <div>
+          <p>Learning</p>
+          <ul className="ml-8 list-disc">
+            <li>item one</li>
+            <li>item two</li>
+          </ul>
+        </div>
+        <div>
+          <p>Things</p>
+          <ul className="ml-8 list-disc">
+            <li>item one</li>
+            <li>item two</li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
