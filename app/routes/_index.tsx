@@ -1,11 +1,25 @@
-import type { MetaFunction } from "@remix-run/node";
+import {
+  redirect,
+  type MetaFunction,
+  type ActionFunctionArgs,
+} from "@remix-run/node";
+import { Form } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
+    { title: "Work Journal" },
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
+
+export async function action({ request }: ActionFunctionArgs) {
+  let formData = await request.formData();
+  let json = Object.fromEntries(formData);
+
+  console.log(json);
+
+  return redirect("/");
+}
 
 export default function Index() {
   return (
@@ -16,7 +30,7 @@ export default function Index() {
       </p>
 
       <div className="my-8 border p-2">
-        <form>
+        <Form method="post">
           <p className="italic">Create an entry</p>
 
           <div>
@@ -69,7 +83,7 @@ export default function Index() {
               </button>
             </div>
           </div>
-        </form>
+        </Form>
       </div>
 
       <div className="mt-4 font-bold">
